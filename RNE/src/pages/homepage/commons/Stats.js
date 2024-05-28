@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { ScrollView, Text } from 'react-native';
 import { useSelector } from 'react-redux';
-import StatsItem from '../commons/StatsItem'
+import StatsItem from './StatsItem'
 import Footer from './Footer';
 
 const stats ={

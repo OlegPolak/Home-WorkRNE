@@ -1,20 +1,20 @@
 import {View, Text, Image, StyleSheet} from 'react-native';
 import Svg from 'react-native-svg';
 
-const StatsItem = ({statsAll, statsDay, terms}) => {
+const StatsItemDay = ({statsAll, statsDay, terms}) => {
   return (
    <View style={styles.statsBlock}>
-          <Image
-              source={require('../images/helmet.png')}
-              defaultSource={require('../images/helmet.png')}
+          {/* <Image
+              source={require('../../../images/helmet.png')}
+              defaultSource={require('../../../images/helmet.png')}
               style={styles.statsImage}
-          />  
-          {/* <Svg
+          />   */}
+          <Svg
               width={100}
               height={50}
-              uri= "https://russianwarship.rip/images/icons/icon-people.svg"
-          ></Svg> */}
-    <View>
+              uri={terms.icon}
+          ></Svg>
+    <View style={styles.statsInfo}>
         <View style={styles.statsNum}>
            <Text style={styles.statsAll}>{statsAll}</Text>
            <Text style={styles.statsDay}>(+{statsDay})</Text> 
@@ -28,17 +28,24 @@ const StatsItem = ({statsAll, statsDay, terms}) => {
 const styles = StyleSheet.create({
     statsBlock: {
         display: 'flex',
-        flexDirection: 'row',
-        marginTop: 10,
-        paddingBottom: 5,
-        borderBottomWidth: 1,
+        marginTop: 5,
+        padding: 5,
+        borderWidth: 1,
         alignItems: 'center', 
+        width: 200,
+        height: 120,
+        flex: 1,
+        marginLeft: 5,
     },
     statsImage: {
-        height: 100,
-        width: 100,
+        height: 40,
+        width: 35,
         marginRight: 20,
         marginLeft: 20,
+    },
+    statsInfo: {
+        flex: 1,
+        textAlign: 'center',
     },
     statsNum: {
         display: "flex",
@@ -47,17 +54,18 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     statsAll: {
-        fontSize: 25,
+        fontSize: 15,
         fontWeight: '700',
     },
     statsDay: {
-        fontSize: 20,
+        fontSize: 13,
         fontWeight: '500',
     },
     statsText: {
-       fontSize: 16, 
+        fontSize: 13, 
+
     },
     
 });
 
-export default StatsItem;
+export default StatsItemDay;

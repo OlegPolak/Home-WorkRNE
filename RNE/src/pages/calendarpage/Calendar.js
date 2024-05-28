@@ -1,23 +1,24 @@
-import { View, Text, StyleSheet} from 'react-native'
+import { View, Text, StyleSheet, ScrollView} from 'react-native'
 import React from 'react'
 import { LinearGradient } from 'expo-linear-gradient';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import CalendarItem from '../commons/CalendarItem';
+import CalendarItem from './commons/CalendarItem';
+import DataInfo from './commons/DataInfo';
+
 
 const Calendar = () => {
     return (
-      <SafeAreaView>
+      <ScrollView>
     <LinearGradient
       colors={['#0057b8', '#fff', '#FFD600']}
       start={{ x: 0.0, y: 0.3 }}
       end={{ x: 0.7, y: 1.0 }}
       locations={[0, 0.45, 0.75]}
       style={styles.linearGradient}>
-      <View style={styles.calendar}>
-            <CalendarItem/>
-      </View>
+          <CalendarItem />
+          <DataInfo/>
       </LinearGradient> 
-    </SafeAreaView>
+    </ScrollView>
   )
 }
 

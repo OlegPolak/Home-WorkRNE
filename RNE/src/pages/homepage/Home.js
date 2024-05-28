@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import { StyleSheet,  View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import Stats from '../commons/Stats';
-import Header from '../commons/Header';
+import Stats from './commons/Stats';
+import Header from './commons/Header';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useDispatch } from 'react-redux';
-import { addStats } from '../redux/statsSliсe';
+import { addStats } from '../../redux/statsSliсe';
 
 
 const Home = () => {

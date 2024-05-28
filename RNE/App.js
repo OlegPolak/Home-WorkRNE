@@ -4,8 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faHome, faCalendarDays } from '@fortawesome/free-solid-svg-icons'
 import { Provider } from 'react-redux';
 
-import Home from './src/pages/Home';
-import Calendar from './src/pages/Calendar';
+import Home from './src/pages/homepage/Home';
+import Calendar from './src/pages/calendarpage/Calendar';
 import { store } from './src/redux/store';
 
 const Tab = createBottomTabNavigator();
@@ -35,7 +35,6 @@ export default function Page() {
             tabBarLabel: 'Calendar',
             tabBarIcon: ({ color }) => (<FontAwesomeIcon icon={faCalendarDays} color={color} />) }}
           component={Calendar} />
-        {/* Якщо у вас є інші вкладки, тут вказуйте їх */}
       </Tab.Navigator>
     </NavigationContainer>
     </Provider>
