@@ -15,8 +15,7 @@ const Home = () => {
     useEffect(() => {
         dispatch(addStats(test));
     })
-
-
+  
     return (
       <SafeAreaView>
     <LinearGradient

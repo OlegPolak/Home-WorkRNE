@@ -1,4 +1,6 @@
 import {View, Text, StyleSheet} from 'react-native';
+import { useEffect, useState } from 'react';
+import { warInfo } from '../../apipage/Api';
 
 
 const Header = () => {
@@ -11,13 +13,24 @@ const Header = () => {
     "Жовтень", "Листопад", "Грудень"];
   const nameMonth = monthNames[month];
 
+  const [info, setInfo] = useState([]);
+
+  useEffect(() => {
+    getInfo();
+  },[]);
+
+  const getInfo = async () => {
+    const info = await warInfo();
+    setInfo(info);
+  };
+
   return (
  <View style={styles.header}>
        <Text style={styles.title}>Генеральний штаб ЗС України інформує</Text>
         <Text style={styles.titleBig}>Загальні бойові втрати російського окупанта</Text>
           <View style={styles.blockData}>
                <Text style={styles.date}>{ day } { nameMonth }</Text>
-               <Text style={styles.day}>817-й день війни </Text>
+        <Text style={styles.day}>{info?.data?.current_day}-й день війни </Text>
         </View>
       </View>
   );

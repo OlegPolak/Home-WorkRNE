@@ -1,7 +1,6 @@
 import { View, Text, StyleSheet, ScrollView} from 'react-native'
 import React from 'react'
 import { LinearGradient } from 'expo-linear-gradient';
-import { SafeAreaView } from 'react-native-safe-area-context';
 import CalendarItem from './commons/CalendarItem';
 import DataInfo from './commons/DataInfo';
 

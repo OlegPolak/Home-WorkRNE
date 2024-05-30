@@ -1,7 +1,7 @@
 import {View, Text, Image, StyleSheet} from 'react-native';
 import Svg from 'react-native-svg';
 
-const StatsItem = ({statsAll, statsDay, terms}) => {
+const StatsItem = ({statsAll, statsDay, termsTitle, termsIcon}) => {
   return (
    <View style={styles.statsBlock}>
           {/* <Image
@@ -12,14 +12,14 @@ const StatsItem = ({statsAll, statsDay, terms}) => {
           <Svg
               width={100}
               height={50}
-              uri={terms.icon}
+              uri={termsIcon}
           ></Svg>
     <View>
         <View style={styles.statsNum}>
            <Text style={styles.statsAll}>{statsAll}</Text>
            <Text style={styles.statsDay}>(+{statsDay})</Text> 
         </View>
-              <Text style={styles.statsText}>{terms.title}</Text>
+              <Text style={styles.statsText}>{termsTitle}</Text>
      </View>
    </View>
   );
